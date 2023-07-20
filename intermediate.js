@@ -62,4 +62,26 @@ const result = transactions.reduce((acc, trans) => {
 
 console.log(result);
 
+async function fetchData(){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const data = {name:'John', age:30};
+            resolve(data);
+        }, 2000);
+    });
+}
+
+async function getData(){
+    try{
+        const data = await fetchData();
+        console.log(data); // process the fetched data
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+
+getData();
+
+
 
